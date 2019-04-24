@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePasswordResetsTable extends Migration
+class CreatePostTagTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePasswordResetsTable extends Migration
      */
     public function up()
     {
-       Schema::create(’posts ’, function (Blueprint $table){}
-         $table ->increments(’id’);
-         $table ->timestamps(); 
-         $table ->string(’title ’);
-         $table ->text(’content ’);
-
+        //
+        Schema::create('post_tag', function (Blueprint $table){
+            $tabel->increments('id');
+            $table->timestamps();
+            $table->integer('post_id');
+            $table->integer('tag_id');
         });
     }
 
@@ -29,6 +29,6 @@ class CreatePasswordResetsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('password_resets');
+        //
     }
 }
